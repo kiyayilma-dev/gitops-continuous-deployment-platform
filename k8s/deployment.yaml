@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pipeline-app
-          image: kiyayilma-dev/project1-cicd-pipeline:latest
+          image: kiyayilma/project1-cicd-pipeline:latest
           ports:
             - containerPort: 3000
           resources:
