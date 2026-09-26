@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pipeline-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pipeline-app
+  template:
+    metadata:
+      labels:
+        app: pipeline-app
+    spec:
+      containers:
+        - name: pipeline-app
+          image: kiyayilma-dev/project1-cicd-pipeline:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
